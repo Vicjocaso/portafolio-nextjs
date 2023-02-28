@@ -1,5 +1,4 @@
 import Head from "next/head";
-import NavBar from "@/components/NavBar";
 import HomePage from "@/components/HomePage";
 import About from "@/components/About";
 import Skills from "@/components/skills/Skills";
