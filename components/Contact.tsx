@@ -4,10 +4,11 @@ import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import { BsFillPersonFill } from "react-icons/bs";
+import { HiOutlineChevronDoubleUp } from "react-icons/hi";
 
 const Contanct = () => {
   return (
-    <div className="w-full md:h-screen" id="contact">
+    <div id="contact" className="w-full md:h-screen lg:h-screen">
       <div className="max-w-[1240px] m-auto mx-auto px-2 py-16 w-full ">
         <p className="uppercase text-xl tracking-widest text-red-600 font-bold">
           Contact
@@ -28,7 +29,8 @@ const Contanct = () => {
               </div>
               <h2 className="py-2">Víctor José Calderón</h2>
               <p className="py-2">
-                I'm avaliable for freelance work. Contact me and let's talk.
+                I&apos;m avaliable for freelance work. Contact me and let&apos;s
+                talk.
               </p>
               <div>
                 <p className="uppercase pt-8">Connect with Me: </p>
@@ -103,17 +105,22 @@ const Contanct = () => {
                     rows={10}
                   />
                 </div>
-                {/* <div className=" px-4 py-3 text-right sm:px-6">
-                  <button
-                    type="submit"
-                    className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                  >
-                    Save
-                  </button>
-                </div> */}
+                <button
+                  type="submit"
+                  className="w-full p-3 rounded-xl mt-4 text-gray-100 shadow-xl shadow-gray-400 uppercase bg-gradient-to-r  from-red-600 to-red-200"
+                >
+                  Save
+                </button>
               </form>
             </div>
           </div>
+        </div>
+        <div className="flex justify-center py-12">
+          <Link href="/#home" scroll={false}>
+            <div className="rounded-full shadow-lg shadow-gray-400 p-4 cursor-pointer hover:scale-110 ease-in duration-300">
+              <HiOutlineChevronDoubleUp className="text-red-600" size={30} />
+            </div>
+          </Link>
         </div>
       </div>
     </div>

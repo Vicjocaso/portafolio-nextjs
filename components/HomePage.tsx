@@ -6,19 +6,19 @@ import Link from "next/link";
 
 const HomePage = () => {
   return (
-    <div className="w-full h-screen text-center">
+    <div id="home" className="w-full h-screen text-center">
       <div className="max-w-[1240px] w-full h-full mx-auto flex justify-center items-center">
         <div>
           <p>Hello from HomePage Page</p>
           <h1 className="py-4 text-gray-700">
-            Hi, I'm <span className="text-red-600">Victor</span>
+            Hi, I&apos;m <span className="text-red-600">Victor</span>
           </h1>
           <h1 className="py-4 text-gray-700">
             A Full-Stack Web
             <span className="text-red-600"> Developer</span>
           </h1>
           <p className="py-2 text-gray-600 max-w-[70%] m-auto">
-            I'm a full-stack web developer bla bla bl al bla
+            I&apos;m a full-stack web developer bla bla bl al bla
             blaaskdjaskldjaskoldjaskldjasl rem
           </p>
           <div className="flex items-center justify-between max-w-[330px] m-auto py-4">

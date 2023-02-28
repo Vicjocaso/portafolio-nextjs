@@ -8,7 +8,7 @@ const Project = () => {
         <p className="uppercase text-xl tracking-widest text-red-600 font-bold">
           Projects
         </p>
-        <h2 className="py-6">What I've Built</h2>
+        <h2 className="py-6">What I&apos;ve Built</h2>
         <div className="grid md:grid-cols-2 gap-8">
           <ProjectItem
             title="Propety Finder"
