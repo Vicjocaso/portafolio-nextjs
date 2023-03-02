@@ -1,5 +1,6 @@
 import React from "react";
 import SkillBox from "./SkillItem";
+import skills from "../../data/skills";
 
 const Skills = () => {
   return (
@@ -8,43 +9,9 @@ const Skills = () => {
         <p className="uppercase text-xl tracking-widest text-red-600">Skills</p>
         <h2 className="py-4">What I Can Do</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <SkillBox src="/../public/skills/html.png" alt="html" title="HTML" />
-          <SkillBox src="/../public/skills/css.png" alt="Css" title="Css" />
-          <SkillBox
-            src="/../public/skills/nextjs.png"
-            alt="NextJs"
-            title="NextJS"
-          />
-          <SkillBox
-            src="/../public/skills/node.png"
-            alt="Node"
-            title="NodeJs"
-          />
-          <SkillBox
-            src="/../public/skills/tailwind.png"
-            alt="Taildwind"
-            title="Tailwind"
-          />
-          <SkillBox
-            src="/../public/skills/github.png"
-            alt="GitHub"
-            title="GitHub"
-          />
-          <SkillBox
-            src="/../public/skills/reactjs.png"
-            alt="ReactJs"
-            title="ReactJs"
-          />
-          <SkillBox
-            src="/../public/skills/typescript.png"
-            alt="TypeScript"
-            title="TypeScript"
-          />
-          <SkillBox
-            src="/../public/skills/golang.png"
-            alt="Golang"
-            title="Golang"
-          />
+          {skills.map((skill) => (
+            <SkillBox src={skill.src} title={skill.title} />
+          ))}
         </div>
       </div>
     </div>

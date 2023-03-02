@@ -1,5 +1,6 @@
 import React from "react";
 import ProjectItem from "./ProjectsItem";
+import project from "../../data/projects";
 
 const Project = () => {
   return (
@@ -10,24 +11,14 @@ const Project = () => {
         </p>
         <h2 className="py-6">What I&apos;ve Built</h2>
         <div className="grid md:grid-cols-2 gap-8">
-          <ProjectItem
-            title="React Ecomerce"
-            backGroundImg="/../public/assets/logo.png"
-            projectUrl="/ReactE"
-            projectTool="ReactJs"
-          />
-          <ProjectItem
-            title="Propety Finder"
-            backGroundImg="/../public/assets/logo.png"
-            projectUrl="/"
-            projectTool="NextJs"
-          />
-          <ProjectItem
-            title="Propety Finder"
-            backGroundImg="/../public/assets/logo.png"
-            projectUrl="/"
-            projectTool="NextJs"
-          />
+          {project.map((project) => (
+            <ProjectItem
+              title={project.title}
+              backGroundImg={project.backgroundImage}
+              projectUrl={project.projectUrl}
+              projectTool={project.projectTool}
+            />
+          ))}
         </div>
       </div>
     </div>
