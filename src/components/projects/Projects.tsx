@@ -1,6 +1,6 @@
 import React from "react";
 import ProjectItem from "./ProjectsItem";
-import project from "../../data/projects";
+import { project } from "../../data/projects";
 
 const Project = () => {
   return (
@@ -13,6 +13,7 @@ const Project = () => {
         <div className="grid md:grid-cols-2 gap-8">
           {project.map((project) => (
             <ProjectItem
+              key={project.title}
               title={project.title}
               backGroundImg={project.backgroundImage}
               projectUrl={project.projectUrl}

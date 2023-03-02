@@ -1,6 +1,6 @@
 import React from "react";
 import SkillBox from "./SkillItem";
-import skills from "../../data/skills";
+import { skills } from "../../data/skills";
 
 const Skills = () => {
   return (
@@ -10,7 +10,7 @@ const Skills = () => {
         <h2 className="py-4">What I Can Do</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {skills.map((skill) => (
-            <SkillBox src={skill.src} title={skill.title} />
+            <SkillBox key={skill.title} src={skill.src} title={skill.title} />
           ))}
         </div>
       </div>

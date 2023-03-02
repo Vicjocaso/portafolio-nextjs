@@ -1,4 +1,4 @@
-export default [
+export const skills = [
   { title: "HTML", src: "/../public/skills/html.png" },
   { title: "Css", src: "/../public/skills/css.png" },
   { title: "NextJS", src: "/../public/skills/nextjs.png" },

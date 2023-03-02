@@ -1,4 +1,4 @@
-export default [
+export const project = [
   {
     title: "React Ecomerce",
     backgroundImage: "/../public/assets/logo.png",
