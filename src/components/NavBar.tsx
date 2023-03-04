@@ -50,7 +50,7 @@ const NavBar = () => {
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
         <Link href="/#home">
           <Image
-            src="/../public/assets/logo.png"
+            src="/assets/logo.png"
             alt="/webPage Logo"
             width="35"
             height="50"
