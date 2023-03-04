@@ -34,7 +34,7 @@ const About = () => {
         <div className="w-[90%] h-[50%] shadow-xl shadow-gray-400 rounded-xl flex items-center justify-center p-4 cursor-pointer hover:scale-105 ease-in duration-300">
           <Image
             className="rounded-xl w-full"
-            src="/../public/assets/code.png"
+            src="/assets/code.png"
             alt="code Image"
             width="1244"
             height="1200"
