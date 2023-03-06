@@ -5,8 +5,31 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import { BsFillPersonFill } from "react-icons/bs";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
+import emailjs from "@emailjs/browser";
 
 const Contanct = () => {
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVER as string,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE as string,
+        e.currentTarget,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_Key as string
+      )
+      .then(
+        (result) => {
+          console.log(result.text, "Menssage");
+        },
+        (error) => {
+          console.log(error.text, "Error");
+        }
+      );
+
+    e.currentTarget.reset();
+  };
+
   return (
     <div id="contact" className="w-full md:h-screen lg:h-screen">
       <div className="max-w-[1240px] m-auto mx-auto px-2 py-16 w-full ">
@@ -58,32 +81,22 @@ const Contanct = () => {
           {/* right side of contact */}
           <div className="col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4">
             <div className="p-4">
-              <form>
-                <div className="grid md:grid-cols-2 gap-4 w-full py-2">
-                  <div className="flex flex-col">
-                    <label className="text-sm font-medium">Name</label>
-                    <input
-                      type="text"
-                      name="name"
-                      className="w-full rounded-lg p-3 flex borde-2"
-                    />
-                  </div>
-
-                  <div className="flex flex-col">
-                    <label className="text-sm font-medium">Phone Number</label>
-                    <input
-                      type="text"
-                      name="phone_number"
-                      className="w-full rounded-lg p-3 flex borde-2 focus:border-indigo-500 focus:ring-indigo-500"
-                    />
-                  </div>
+              <h2>{process.env.TZ}</h2>
+              <form onSubmit={sendEmail}>
+                <div className="flex flex-col py-2">
+                  <label className="text-sm font-medium ">Name</label>
+                  <input
+                    type="text"
+                    name="user_name"
+                    className="w-full rounded-lg p-3 borde-2"
+                  />
                 </div>
 
                 <div className="flex flex-col py-2">
                   <label className="text-sm font-medium ">Email</label>
                   <input
                     type="email"
-                    name="email"
+                    name="user_email"
                     className="w-full rounded-lg p-3 flex borde-2 focus:border-indigo-500 focus:ring-indigo-500"
                   />
                 </div>
@@ -92,7 +105,7 @@ const Contanct = () => {
                   <label className="text-sm font-medium ">Subject</label>
                   <input
                     type="text"
-                    name="subject"
+                    name="user_subject"
                     className="w-full rounded-lg p-3 flex borde-2 focus:border-indigo-500 focus:ring-indigo-500"
                   />
                 </div>
@@ -107,6 +120,7 @@ const Contanct = () => {
                 </div>
                 <button
                   type="submit"
+                  value="send"
                   className="w-full p-3 rounded-xl mt-4 text-gray-100 shadow-xl shadow-gray-400 uppercase bg-gradient-to-r  from-red-600 to-red-200"
                 >
                   Save

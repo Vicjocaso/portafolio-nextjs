@@ -6,13 +6,13 @@ export const project = [
     projectTool: "ReactJs",
   },
   {
-    title: "React Ecomerce",
+    title: "Nextjs Pastry",
     backgroundImage: "/assets/logo.png",
     projectUrl: "/ReactE",
     projectTool: "ReactJs",
   },
   {
-    title: "React Ecomerce",
+    title: "Nextjs project",
     backgroundImage: "/assets/logo.png",
     projectUrl: "/ReactE",
     projectTool: "ReactJs",
