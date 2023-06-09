@@ -29,7 +29,6 @@ const About = () => {
             all aspects of the development process, they must have expertise in
             both.
           </p>
-          <p className="py-4 text-gray-600">link</p>
         </div>
         <div className="w-[90%] h-[50%] shadow-xl shadow-gray-400 rounded-xl flex items-center justify-center p-4 cursor-pointer hover:scale-105 ease-in duration-300">
           <Image
