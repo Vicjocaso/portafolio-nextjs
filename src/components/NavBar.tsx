@@ -5,6 +5,8 @@ import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { BsFillPersonFill } from "react-icons/bs";
 import { useRouter } from "next/router";
+import { navbar } from "src/config/navBar";
+import clsx from "clsx";
 
 const NavBar = () => {
   const [sideBar, setSideBar] = useState<boolean>(false);
@@ -14,7 +16,7 @@ const NavBar = () => {
   const router = useRouter();
 
   useEffect(() => {
-    if (router.asPath === "/ReactE") {
+    if (router.asPath === "/projects/nextjs-ecommerce") {
       setNavBg("transparent");
       setLinkColor("#ecf0f3");
     } else {
@@ -49,38 +51,46 @@ const NavBar = () => {
     >
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
         <Link href="/#home">
-          <Image
-            src="/assets/logo.png"
-            alt="/webPage Logo"
-            width="35"
-            height="50"
-          />
-        </Link>
-        <div>
-          <ul style={{ color: `${linkColor}` }} className="hidden md:flex">
-            <Link href="/#home" scroll={false}>
-              <li className="ml-10 text-sm uppercase hover:border-b">Home</li>
-            </Link>
-            <Link href="/#about" scroll={false}>
-              <li className="ml-10 text-sm uppercase hover:border-b">About</li>
-            </Link>
-            <Link href="/#skills" scroll={false}>
-              <li className="ml-10 text-sm uppercase hover:border-b">Skills</li>
-            </Link>
-            <Link href="/#projects" scroll={false}>
-              <li className="ml-10 text-sm uppercase hover:border-b">
-                Project
-              </li>
-            </Link>
-            <Link href="/#contact" scroll={false}>
-              <li className="ml-10 text-sm uppercase hover:border-b">
-                Contact
-              </li>
-            </Link>
-          </ul>
-          <div onClick={handleSideBar} className="md:hidden">
-            <AiOutlineMenu size={25} />
+          <div className="relative inline-flex items-center justify-center w-14 h-14 overflow-hidden bg-slate-900 rounded-full">
+            <span className="font-medium text-slate-50">VC</span>
           </div>
+        </Link>
+        <ul style={{ color: `${linkColor}` }} className="hidden md:flex">
+          {navbar.map((item, index) => (
+            <Link key={index} href={item.path} scroll={false}>
+              <li
+                className={clsx(
+                  "ml-10 text-sm uppercase hover:border-black border-b-2 duration-300",
+                  router.asPath === item.path && "border-black"
+                )}
+              >
+                {item.title}
+              </li>
+            </Link>
+          ))}
+        </ul>
+        <div className="hidden md:flex">
+          <div className="flex items-center justify-between max-w-[330px] m-auto py-4">
+            <div className="rounded-full shadow-gray-400 p-4 cursor-pointer hover:scale-110 ease-in duration-300">
+              <Link href="https://www.linkedin.com/in/victor-jos%C3%A9-calder%C3%B3n-16a194184/">
+                <FaLinkedin size={25} />
+              </Link>
+            </div>
+            <div className="rounded-full shadow-gray-400 p-4 cursor-pointer hover:scale-110 ease-in duration-300">
+              <Link href="https://github.com/Vicjocaso">
+                <FaGithub size={25} />
+              </Link>
+            </div>
+            <div className="rounded-full shadow-gray-400 p-4 cursor-pointer hover:scale-110 ease-in duration-300">
+              <AiOutlineMail size={25} />
+            </div>
+            <div className="rounded-full shadow-gray-400 p-4 cursor-pointer hover:scale-110 ease-in duration-300">
+              <BsFillPersonFill size={25} />
+            </div>
+          </div>
+        </div>
+        <div onClick={handleSideBar} className="md:hidden">
+          <AiOutlineMenu size={25} />
         </div>
       </div>
 

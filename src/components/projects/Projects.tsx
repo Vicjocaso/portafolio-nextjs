@@ -11,14 +11,15 @@ const Project = () => {
         </p>
         <h2 className="py-6">What I&apos;ve Built</h2>
         <div className="grid md:grid-cols-2 gap-8">
-          {project.map((project) => (
-            <ProjectItem
-              key={project.title}
-              title={project.title}
-              backGroundImg={project.backgroundImage}
-              projectUrl={project.projectUrl}
-              projectTool={project.projectTool}
-            />
+          {project.map((project, index) => (
+            <div key={index}>
+              <ProjectItem
+                title={project.title}
+                backGroundImg={project.backgroundImage}
+                projectUrl={project.href}
+                projectTool={project.technologies}
+              />
+            </div>
           ))}
         </div>
       </div>

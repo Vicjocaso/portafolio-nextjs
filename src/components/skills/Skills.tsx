@@ -10,7 +10,12 @@ const Skills = () => {
         <h2 className="py-4">What I Can Do</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {skills.map((skill) => (
-            <SkillBox key={skill.title} src={skill.src} title={skill.title} />
+            <SkillBox
+              key={skill.title}
+              src={skill.src}
+              title={skill.title}
+              href={skill.href}
+            />
           ))}
         </div>
       </div>

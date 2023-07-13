@@ -5,6 +5,25 @@ import { AiOutlineMail } from "react-icons/ai";
 import Link from "next/link";
 
 const HomePage = () => {
+  // Function will execute on click of button
+  const downloadResume = () => {
+    // using Java Script method to get PDF file
+    fetch("resume.pdf").then((response) => {
+      response.blob().then((blob) => {
+        // Creating new object of PDF file
+        const fileURL = window.URL.createObjectURL(
+          new Blob([blob], { type: "application/pdf" })
+        );
+        // Setting various property values
+        let linkElement = document.createElement("a");
+        linkElement.href = fileURL;
+        linkElement.download = "victor_calderon_resume";
+        // window.open(fileURL, "_blank");
+        linkElement.click();
+      });
+    });
+  };
+
   return (
     <div id="home" className="w-full h-screen text-center">
       <div className="max-w-[1240px] w-full h-full mx-auto flex justify-center items-center">
@@ -20,23 +39,14 @@ const HomePage = () => {
             I&apos;m a full-stack web developer passionate about web technology
             that seeks to learn more about it every day.
           </p>
-          <div className="flex items-center justify-between max-w-[330px] m-auto py-4">
-            <div className="rounded-full shadow-lg shadow-gray-400 p-4 cursor-pointer hover:scale-110 ease-in duration-300">
-              <Link href="https://www.linkedin.com/in/victor-jos%C3%A9-calder%C3%B3n-16a194184/">
-                <FaLinkedin size={25} />
-              </Link>
-            </div>
-            <div className="rounded-full shadow-lg shadow-gray-400 p-4 cursor-pointer hover:scale-110 ease-in duration-300">
-              <Link href="https://github.com/Vicjocaso">
-                <FaGithub size={25} />
-              </Link>
-            </div>
-            <div className="rounded-full shadow-lg shadow-gray-400 p-4 cursor-pointer hover:scale-110 ease-in duration-300">
-              <AiOutlineMail size={25} />
-            </div>
-            <div className="rounded-full shadow-lg shadow-gray-400 p-4 cursor-pointer hover:scale-110 ease-in duration-300">
-              <BsFillPersonFill size={25} />
-            </div>
+
+          <div className="pt-4">
+            <button
+              onClick={downloadResume}
+              className="py-3 px-6 bg-red-600 text-slate-50 rounded-lg shadow-lg shadow-gray-400 m-auto hover:scale-110 ease-in duration-300"
+            >
+              Download Resume
+            </button>
           </div>
         </div>
       </div>

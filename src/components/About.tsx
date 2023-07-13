@@ -4,8 +4,8 @@ import React from "react";
 const About = () => {
   return (
     <div className="w-full md:h-screen p-2 flex items-center" id="about">
-      <div className="max-w-[1240px] m-auto md:grid grid-cols-3 gap-8">
-        <div className="col-span-2">
+      <div className="max-w-screen m-auto md:grid lg:grid-cols-2 gap-5">
+        <div className="">
           <p className="uppercase text-xl tracking-widest text-red-600">
             About
           </p>
@@ -30,14 +30,15 @@ const About = () => {
             both.
           </p>
         </div>
-        <div className="w-[90%] h-[50%] shadow-xl shadow-gray-400 rounded-xl flex items-center justify-center p-4 cursor-pointer hover:scale-105 ease-in duration-300">
-          <Image
-            className="rounded-xl w-full"
-            src="/assets/code.png"
-            alt="code Image"
-            width="1244"
-            height="1200"
-          />
+        <div className="flex justify-center pl-20">
+          <div className="relative w-full h-full shadow-xl shadow-gray-400 rounded-xl justify-center cursor-pointer hover:scale-105 ease-in duration-300">
+            <Image
+              className="rounded-xl"
+              src="/assets/code.png"
+              alt="code Image"
+              fill
+            />
+          </div>
         </div>
       </div>
     </div>
