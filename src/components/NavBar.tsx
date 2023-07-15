@@ -72,25 +72,24 @@ const NavBar = () => {
         <div className="hidden md:flex">
           <div className="flex items-center justify-between max-w-[330px] m-auto py-4">
             <div className="rounded-full shadow-gray-400 p-4 cursor-pointer hover:scale-110 ease-in duration-300">
-              <Link href="https://www.linkedin.com/in/victor-jos%C3%A9-calder%C3%B3n-16a194184/">
+              <Link
+                href="https://www.linkedin.com/in/victor-jos%C3%A9-calder%C3%B3n-16a194184/"
+                target="_blank"
+              >
                 <FaLinkedin size={25} />
               </Link>
             </div>
             <div className="rounded-full shadow-gray-400 p-4 cursor-pointer hover:scale-110 ease-in duration-300">
-              <Link href="https://github.com/Vicjocaso">
+              <Link href="https://github.com/Vicjocaso" target="_blank">
                 <FaGithub size={25} />
               </Link>
             </div>
             <div className="rounded-full shadow-gray-400 p-4 cursor-pointer hover:scale-110 ease-in duration-300">
-              <AiOutlineMail size={25} />
-            </div>
-            <div className="rounded-full shadow-gray-400 p-4 cursor-pointer hover:scale-110 ease-in duration-300">
-              <BsFillPersonFill size={25} />
+              <Link href={"#contact"} scroll={false}>
+                <AiOutlineMail size={25} />
+              </Link>
             </div>
           </div>
-        </div>
-        <div onClick={handleSideBar} className="md:hidden">
-          <AiOutlineMenu size={25} />
         </div>
       </div>
 

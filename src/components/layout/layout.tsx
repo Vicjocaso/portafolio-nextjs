@@ -22,10 +22,10 @@ export default function Layout({
         ```
       */}
       <Head>
-        <title>{`${header || ""} | Pastry®`}</title>
+        <title>{`${header || ""} | Portfolio`}</title>
         <meta
           name="description"
-          content={description ? description : "Pastry Baker Shop"}
+          content={description ? description : "Portfolio"}
         />
       </Head>
       <div>

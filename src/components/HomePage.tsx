@@ -1,8 +1,4 @@
 import React from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { BsFillPersonFill } from "react-icons/bs";
-import { AiOutlineMail } from "react-icons/ai";
-import Link from "next/link";
 
 const HomePage = () => {
   // Function will execute on click of button

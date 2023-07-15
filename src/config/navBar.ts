@@ -10,7 +10,7 @@ export const navbar: NavBar[] = [
     path: "/#about",
   },
   {
-    title: "Skils",
+    title: "Skills",
     path: "/#skills",
   },
   {
