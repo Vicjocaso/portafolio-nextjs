@@ -1,27 +1,23 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Project } from "src/types/projects";
-
-type ProjectItemProps = {
-  title: string;
-  backGroundImg: string;
-  projectUrl: string;
-  projectTool: string[];
-};
+import { type ProjectProps } from "@/types/index";
 
 const ProjectItem = ({
   title,
-  backGroundImg,
-  projectUrl,
-  projectTool,
-}: ProjectItemProps) => {
+  backgroundImage,
+  href,
+  overview,
+  subtitle,
+  technologies,
+  github,
+}: ProjectProps) => {
   return (
     <div className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 rounded-xl p-4 group hover:bg-gradient-to-r from-red-600 to-red-200">
       <div className="w-full h-80">
         <Image
           className="rounded-xl group-hover:opacity-10 absolute object-contain"
-          src={backGroundImg}
+          src={backgroundImage}
           fill
           alt="/"
         />
@@ -34,7 +30,7 @@ const ProjectItem = ({
         </div>
         <div className="py-9 pb-4pt-2 text-white text-center">
           <p className="pb-2 font-bold">Technologies</p>
-          {projectTool.map((tech, index) => (
+          {technologies.map((tech, index) => (
             <p key={index}>{tech}</p>
           ))}
         </div>

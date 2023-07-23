@@ -1,6 +1,6 @@
 import React from "react";
 import SkillBox from "./SkillItem";
-import { skills } from "../../data/skills";
+import { siteConfig } from "@/config/site";
 
 const Skills = () => {
   return (
@@ -9,7 +9,7 @@ const Skills = () => {
         <p className="uppercase text-xl tracking-widest text-red-600">Skills</p>
         <h2 className="py-4">What I Can Do</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {skills.map((skill) => (
+          {siteConfig.skills.map((skill) => (
             <SkillBox
               key={skill.title}
               src={skill.src}

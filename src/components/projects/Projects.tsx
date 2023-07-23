@@ -1,23 +1,25 @@
 import React from "react";
-import ProjectItem from "./ProjectsItem";
-import { project } from "../../data/projects";
+import ProjectItem from "./ProjectItem";
+import { siteConfig } from "@/config/site";
 
 const Project = () => {
   return (
     <div className="w-full md:h-screen p-2" id="projects">
       <div className="max-w-[1240px] m-auto mx-auto flex flex-col justify-center h-full">
-        <p className="uppercase text-xl tracking-widest text-red-600 font-bold">
+        <p className="uppercase text-4xl pb-20  tracking-widest text-red-600 font-bold">
           Projects
         </p>
-        <h2 className="py-6">What I&apos;ve Built</h2>
         <div className="grid md:grid-cols-2 gap-8">
-          {project.map((project, index) => (
+          {siteConfig.project.map((project, index) => (
             <div key={index}>
               <ProjectItem
                 title={project.title}
-                backGroundImg={project.backgroundImage}
-                projectUrl={project.href}
-                projectTool={project.technologies}
+                backgroundImage={project.backgroundImage}
+                href={project.href}
+                technologies={project.technologies}
+                overview={project.overview}
+                subtitle={project.subtitle}
+                github={project.github}
               />
             </div>
           ))}

@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { BsFillPersonFill } from "react-icons/bs";
 import { useRouter } from "next/router";
-import { navbar } from "src/config/navBar";
+import { siteConfig, socialLinks } from "@/config/site";
 import clsx from "clsx";
 
 const NavBar = () => {
@@ -56,7 +54,7 @@ const NavBar = () => {
           </div>
         </Link>
         <ul style={{ color: `${linkColor}` }} className="hidden md:flex">
-          {navbar.map((item, index) => (
+          {siteConfig.navbar.map((item, index) => (
             <Link key={index} href={item.path} scroll={false}>
               <li
                 className={clsx(
@@ -72,15 +70,12 @@ const NavBar = () => {
         <div className="hidden md:flex">
           <div className="flex items-center justify-between max-w-[330px] m-auto py-4">
             <div className="rounded-full shadow-gray-400 p-4 cursor-pointer hover:scale-110 ease-in duration-300">
-              <Link
-                href="https://www.linkedin.com/in/victor-jos%C3%A9-calder%C3%B3n-16a194184/"
-                target="_blank"
-              >
+              <Link href={socialLinks.linkedin} target="_blank">
                 <FaLinkedin size={25} />
               </Link>
             </div>
             <div className="rounded-full shadow-gray-400 p-4 cursor-pointer hover:scale-110 ease-in duration-300">
-              <Link href="https://github.com/Vicjocaso" target="_blank">
+              <Link href={socialLinks.github} target="_blank">
                 <FaGithub size={25} />
               </Link>
             </div>
@@ -90,6 +85,12 @@ const NavBar = () => {
               </Link>
             </div>
           </div>
+        </div>
+        <div
+          onClick={handleSideBar}
+          className="shadow-gray-400 p-3 lg:hidden cursor-pointer"
+        >
+          <AiOutlineMenu size={25} />
         </div>
       </div>
 
@@ -109,22 +110,21 @@ const NavBar = () => {
         >
           <div>
             <div className="flex w-full items-center justify-between">
-              <Image
-                src="/assets/logo.png"
-                alt="/webPage Logo"
-                width="35"
-                height="50"
-              />
+              <Link href="/#home">
+                <div className="relative inline-flex items-center justify-center w-8 h-8 overflow-hidden bg-slate-900 rounded-full">
+                  <span className="font-medium text-slate-50">VC</span>
+                </div>
+              </Link>
               <div
                 onClick={handleSideBar}
-                className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer"
+                className="rounded-full shadow-sm shadow-gray-400 p-3 cursor-pointer"
               >
-                <AiOutlineClose size={25} />
+                <AiOutlineClose size={20} />
               </div>
             </div>
             <div className="border-b border-gray-300 my-4">
               <p className="w-[85%] md:w-[90%] py-4">
-                Let&apos;s build something le
+                Let&apos;s build something
               </p>
             </div>
           </div>
@@ -161,16 +161,17 @@ const NavBar = () => {
               <div>
                 <div className="flex items-center justify-between my-4 w-full sm:w-[80%]">
                   <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                    <FaLinkedin />
+                    <Link href={socialLinks.linkedin} scroll={false}>
+                      <FaLinkedin />
+                    </Link>
                   </div>
                   <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                    <FaGithub />
+                    <Link href={socialLinks.github} scroll={false}>
+                      <FaGithub />
+                    </Link>
                   </div>
                   <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
                     <AiOutlineMail />
-                  </div>
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                    <BsFillPersonFill />
                   </div>
                 </div>
               </div>
