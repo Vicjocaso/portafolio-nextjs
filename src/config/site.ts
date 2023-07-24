@@ -42,7 +42,7 @@ export const siteConfig = {
       href: "https://pastry-wheat.vercel.app/",
       overview:
         "This is an ecommerce that I did with Stack T3. I wanted to improve my typescript skills.",
-      technologies: ["Nextjs", "TRCP", "Prisma", "PlanetScale"],
+      technologies: ["Nextjs", "TRCP", "Prisma", "PlanetScale", "zustand"],
       github: "",
     },
     {
